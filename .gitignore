@@ -1,0 +1,13 @@
+.gradle/
+build/
+out/
+run/
+.idea/
+*.iml
+.vscode/
+bin/
+
+tools/shaderpacks/
+
+# Built packs and jars are attached to GitHub releases instead
+dist/

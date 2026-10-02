@@ -1,0 +1,32 @@
+{
+  "attributes": {
+    "minecraft:gameplay/natural_mob_spawns": {
+      "argument": {
+        "spawn_costs": {},
+        "spawns_by_category": {}
+      },
+      "modifier": "overlay"
+    },
+    "minecraft:visual/sky_color": "#5FA8FF",
+    "minecraft:visual/fog_color": "#CDE5FF",
+    "minecraft:visual/water_fog_color": "#3A9FC0",
+    "minecraft:audio/ambient_sounds": {
+      "loop": "golftour:ambient.course",
+      "additions": {
+        "sound": "golftour:ambient.birds",
+        "tick_chance": 0.0015
+      }
+    }
+  },
+  "carvers": [],
+  "downfall": 0.4,
+  "effects": {
+    "water_color": "#2FB8D8",
+    "foliage_color": "#4FB536",
+    "grass_color": "#79CC4E",
+    "dry_foliage_color": "#9C7A4A"
+  },
+  "features": [],
+  "has_precipitation": false,
+  "temperature": 0.8
+}

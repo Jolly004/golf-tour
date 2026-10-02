@@ -1,0 +1,77 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "t": "golftour:block/hazard_stake",
+    "particle": "golftour:block/hazard_stake"
+  },
+  "elements": [
+    {
+      "from": [
+        6.5,
+        0,
+        6.5
+      ],
+      "to": [
+        9.5,
+        14,
+        9.5
+      ],
+      "faces": {
+        "north": {
+          "texture": "#t",
+          "uv": [
+            6,
+            2,
+            9,
+            16
+          ]
+        },
+        "south": {
+          "texture": "#t",
+          "uv": [
+            6,
+            2,
+            9,
+            16
+          ]
+        },
+        "east": {
+          "texture": "#t",
+          "uv": [
+            6,
+            2,
+            9,
+            16
+          ]
+        },
+        "west": {
+          "texture": "#t",
+          "uv": [
+            6,
+            2,
+            9,
+            16
+          ]
+        },
+        "up": {
+          "texture": "#t",
+          "uv": [
+            6,
+            2,
+            9,
+            16
+          ]
+        },
+        "down": {
+          "texture": "#t",
+          "uv": [
+            6,
+            2,
+            9,
+            16
+          ]
+        }
+      }
+    }
+  ]
+}

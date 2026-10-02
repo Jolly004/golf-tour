@@ -1,0 +1,118 @@
+plugins {
+	id 'net.fabricmc.fabric-loom' version "${loom_version}"
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+	archivesName = project.archives_base_name
+}
+
+repositories {
+	mavenCentral()
+	exclusiveContent {
+		forRepository { maven { name = "Modrinth"; url = "https://api.modrinth.com/maven" } }
+		filter { includeGroup "maven.modrinth" }
+	}
+}
+
+loom {
+	splitEnvironmentSourceSets()
+	mods {
+		"golftour" {
+			sourceSet sourceSets.main
+			sourceSet sourceSets.client
+		}
+	}
+}
+
+fabricApi {
+	configureTests {
+		createSourceSet = true
+		modId = "golftour-test"
+		enableGameTests = false
+		enableClientGameTests = true
+		eula = true
+	}
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+	// Smooth terrain: NoCubes ported to 26.3 (LGPL-3.0, source in ../nocubes-port). Optional at runtime;
+	// run without it using -PnoNoCubes to see the layered-turf fallback.
+	def noCubes = files("libs/nocubes-port-0.5.2-port.1+26.3.jar")
+	compileOnly noCubes
+	gametestCompileOnly noCubes
+	if (!project.hasProperty("noNoCubes")) {
+		localRuntime noCubes
+	}
+
+	// Golf buggy: Automobility, unofficial 26.3 port (MIT). Optional at runtime; -PnoBuggy runs without it.
+	def automobility = files("libs/automobility-0.5.0-unofficial.36+26.3-fabric.jar")
+	compileOnly automobility
+	gametestCompileOnly automobility
+	if (!project.hasProperty("noBuggy")) {
+		localRuntime automobility
+	}
+
+	// Shader testing (dev runs only, never shipped): ./gradlew runClient -Pshaders
+	if (project.hasProperty("shaders")) {
+		localRuntime "maven.modrinth:sodium:${project.sodium_version}"
+		localRuntime "maven.modrinth:iris:${project.iris_version}"
+	}
+
+	testImplementation "org.junit.jupiter:junit-jupiter:5.11.4"
+	testRuntimeOnly "org.junit.platform:junit-platform-launcher"
+}
+
+processResources {
+	inputs.property "version", project.version
+	filesMatching("fabric.mod.json") {
+		expand "version": project.version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 25
+	it.options.encoding = "UTF-8"
+}
+
+java {
+	withSourcesJar()
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
+}
+
+test {
+	useJUnitPlatform()
+}
+
+// Puts the shader pack and an Iris config into the dev run folders when testing with -Pshaders.
+def shaderPack = "ComplementaryReimagined_r5.9.3.zip"
+tasks.register("prepareShaders") {
+	onlyIf { project.hasProperty("shaders") }
+	doLast {
+		["run", "build/run/clientGameTest"].each { dir ->
+			copy {
+				from "tools/shaderpacks/${shaderPack}"
+				into "${dir}/shaderpacks"
+			}
+			def cfg = file("${dir}/config/iris.properties")
+			cfg.parentFile.mkdirs()
+			cfg.text = ["enableShaders=true", "shaderPack=${shaderPack}", ""].join(System.lineSeparator())
+		}
+	}
+}
+tasks.matching { it.name in ["runClient", "runClientGameTest"] }.configureEach { dependsOn "prepareShaders" }
+tasks.matching { it.name == "prepareShaders" }.configureEach { mustRunAfter tasks.matching { it.name == "deleteGameTestRunDir" } }
+
+// Run just one client game test: ./gradlew runClientGameTest -Ponly=Putting (matches the test class name)
+tasks.matching { it.name == "runClientGameTest" }.configureEach {
+	if (project.hasProperty("only")) {
+		jvmArgs("-Dgolftour.only=${project.property("only")}")
+	}
+}

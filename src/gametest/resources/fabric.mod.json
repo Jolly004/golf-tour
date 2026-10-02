@@ -1,0 +1,17 @@
+{
+	"schemaVersion": 1,
+	"id": "golftour-test",
+	"version": "1.0.0",
+	"name": "Golf Tour client game tests",
+	"environment": "*",
+	"entrypoints": {
+		"fabric-client-gametest": [
+			"work.benwalker.golftour.test.GolfClientGameTest",
+			"work.benwalker.golftour.test.GolfMatchGameTest",
+			"work.benwalker.golftour.test.GolfPuttingGameTest"
+		]
+	},
+	"depends": {
+		"golftour": "*"
+	}
+}

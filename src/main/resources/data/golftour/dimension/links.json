@@ -1,0 +1,11 @@
+{
+  "type": "golftour:links",
+  "generator": {
+    "type": "golftour:course",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "golftour:links"
+    },
+    "course_seed": 2026
+  }
+}

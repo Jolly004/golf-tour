@@ -1,0 +1,32 @@
+{
+	"schemaVersion": 1,
+	"id": "golftour",
+	"version": "${version}",
+	"name": "Golf Tour",
+	"description": "PGA-style golf in Minecraft: an 18-hole championship course, a 14-club bag on your hotbar, shot previews, a PGA 2K-style mouse swing, free roam with a golf buggy, wind, lies, sloped greens and a full scorecard.",
+	"authors": ["Ben Walker"],
+	"contributors": ["Built with Claude Code"],
+	"license": "MIT",
+	"icon": "assets/golftour/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": ["work.benwalker.golftour.GolfTour"],
+		"client": ["work.benwalker.golftour.client.GolfTourClient"]
+	},
+	"mixins": [
+		{
+			"config": "golftour.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	},
+	"recommends": {
+		"nocubes": "*",
+		"automobility": "*"
+	}
+}

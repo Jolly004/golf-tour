@@ -1,0 +1,16 @@
+{
+	"required": true,
+	"package": "work.benwalker.golftour.client.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"CameraMixin",
+		"FirstPersonClubMixin",
+		"GameRendererMixin",
+		"GolferModelMixin",
+		"GolferRenderMixin",
+		"MouseHandlerMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

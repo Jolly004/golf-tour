@@ -1,0 +1,171 @@
+{
+  "club.driver": {
+    "sounds": [
+      "golftour:club/driver_0",
+      "golftour:club/driver_1",
+      "golftour:club/driver_2"
+    ],
+    "subtitle": "subtitles.golftour.club"
+  },
+  "club.iron": {
+    "sounds": [
+      "golftour:club/iron_0",
+      "golftour:club/iron_1",
+      "golftour:club/iron_2"
+    ],
+    "subtitle": "subtitles.golftour.club"
+  },
+  "club.wedge": {
+    "sounds": [
+      "golftour:club/wedge_0",
+      "golftour:club/wedge_1",
+      "golftour:club/wedge_2"
+    ],
+    "subtitle": "subtitles.golftour.club"
+  },
+  "club.putter": {
+    "sounds": [
+      "golftour:club/putter_0",
+      "golftour:club/putter_1",
+      "golftour:club/putter_2"
+    ],
+    "subtitle": "subtitles.golftour.putt"
+  },
+  "club.sand": {
+    "sounds": [
+      "golftour:club/sand_0",
+      "golftour:club/sand_1",
+      "golftour:club/sand_2"
+    ],
+    "subtitle": "subtitles.golftour.sand"
+  },
+  "swing.whoosh": {
+    "sounds": [
+      "golftour:swing/whoosh_0",
+      "golftour:swing/whoosh_1",
+      "golftour:swing/whoosh_2"
+    ],
+    "subtitle": "subtitles.golftour.swing"
+  },
+  "ball.land_grass": {
+    "sounds": [
+      "golftour:ball/land_grass_0",
+      "golftour:ball/land_grass_1",
+      "golftour:ball/land_grass_2"
+    ],
+    "subtitle": "subtitles.golftour.land"
+  },
+  "ball.land_green": {
+    "sounds": [
+      "golftour:ball/land_green_0",
+      "golftour:ball/land_green_1",
+      "golftour:ball/land_green_2"
+    ],
+    "subtitle": "subtitles.golftour.land"
+  },
+  "ball.land_sand": {
+    "sounds": [
+      "golftour:ball/land_sand_0",
+      "golftour:ball/land_sand_1",
+      "golftour:ball/land_sand_2"
+    ],
+    "subtitle": "subtitles.golftour.land"
+  },
+  "ball.land_hard": {
+    "sounds": [
+      "golftour:ball/land_hard_0",
+      "golftour:ball/land_hard_1",
+      "golftour:ball/land_hard_2"
+    ],
+    "subtitle": "subtitles.golftour.land"
+  },
+  "ball.tree": {
+    "sounds": [
+      "golftour:ball/tree_0",
+      "golftour:ball/tree_1",
+      "golftour:ball/tree_2"
+    ],
+    "subtitle": "subtitles.golftour.tree"
+  },
+  "ball.splash": {
+    "sounds": [
+      "golftour:ball/splash_0",
+      "golftour:ball/splash_1",
+      "golftour:ball/splash_2"
+    ],
+    "subtitle": "subtitles.golftour.splash"
+  },
+  "ball.cup": {
+    "sounds": [
+      "golftour:ball/cup"
+    ],
+    "subtitle": "subtitles.golftour.cup"
+  },
+  "ball.lip": {
+    "sounds": [
+      "golftour:ball/lip"
+    ],
+    "subtitle": "subtitles.golftour.lip"
+  },
+  "crowd.applause": {
+    "sounds": [
+      "golftour:crowd/applause_0",
+      "golftour:crowd/applause_1"
+    ],
+    "subtitle": "subtitles.golftour.applause"
+  },
+  "crowd.cheer": {
+    "sounds": [
+      "golftour:crowd/cheer_0",
+      "golftour:crowd/cheer_1"
+    ],
+    "subtitle": "subtitles.golftour.cheer"
+  },
+  "crowd.groan": {
+    "sounds": [
+      "golftour:crowd/groan_0",
+      "golftour:crowd/groan_1"
+    ],
+    "subtitle": "subtitles.golftour.groan"
+  },
+  "ambient.course": {
+    "sounds": [
+      {
+        "name": "golftour:ambient/course_loop",
+        "stream": true,
+        "volume": 0.4
+      }
+    ]
+  },
+  "ambient.birds": {
+    "sounds": [
+      {
+        "name": "golftour:ambient/bird_0",
+        "volume": 0.55
+      },
+      {
+        "name": "golftour:ambient/bird_1",
+        "volume": 0.55
+      },
+      {
+        "name": "golftour:ambient/bird_2",
+        "volume": 0.55
+      }
+    ]
+  },
+  "ui.meter_tick": {
+    "sounds": [
+      "golftour:ui/meter_tick"
+    ]
+  },
+  "ui.meter_lock": {
+    "sounds": [
+      "golftour:ui/meter_lock"
+    ]
+  },
+  "ui.hole_start": {
+    "sounds": [
+      "golftour:ui/hole_start"
+    ]
+  }
+}

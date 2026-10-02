@@ -1,0 +1,78 @@
+{
+  "parent": "minecraft:block/block",
+  "ambientocclusion": false,
+  "textures": {
+    "pole": "golftour:block/flagstick",
+    "particle": "golftour:block/flagstick"
+  },
+  "elements": [
+    {
+      "from": [
+        7.5,
+        0,
+        7.5
+      ],
+      "to": [
+        8.5,
+        16,
+        8.5
+      ],
+      "faces": {
+        "north": {
+          "texture": "#pole",
+          "uv": [
+            7,
+            0,
+            8,
+            16
+          ]
+        },
+        "south": {
+          "texture": "#pole",
+          "uv": [
+            7,
+            0,
+            8,
+            16
+          ]
+        },
+        "east": {
+          "texture": "#pole",
+          "uv": [
+            7,
+            0,
+            8,
+            16
+          ]
+        },
+        "west": {
+          "texture": "#pole",
+          "uv": [
+            7,
+            0,
+            8,
+            16
+          ]
+        },
+        "up": {
+          "texture": "#pole",
+          "uv": [
+            7,
+            0,
+            8,
+            16
+          ]
+        },
+        "down": {
+          "texture": "#pole",
+          "uv": [
+            7,
+            0,
+            8,
+            16
+          ]
+        }
+      }
+    }
+  ]
+}
