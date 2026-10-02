@@ -29,6 +29,7 @@ Fabric loader API + a few client mixins. Reasons:
 - Dev client (`./gradlew runClient`) uses `run/` inside the project. Ben's real `.minecraft` is never touched.
 
 ## Log
+- 2026-10-02: Published: https://github.com/Jolly004/golf-tour (release v0.4.0 has the CurseForge zip, the .mrpack and the jars). The NoCubes port is at https://github.com/Jolly004/nocubes-port. A public CurseForge listing is blocked: the two port jars aren't on CurseForge's third-party allow-list. Publishing a release: bump `mod_version`, `./gradlew build`, `python tools/make_modpack.py`, then `gh release create vX dist/... libs/...`.
 - 2026-10-02 (0.4.0): Multiplayer matches for 2-4 players (`/golf match create|join|start|leave`): real golf turn order, shared wind, leaderboard, turn banner, friends' ball beacons, tracers and watch-cam, group scorecard, final standings, rejoin on reconnect. e4mc added to the pack for internet play via Open to LAN. Putting fixed (see 22-25) and a caddie picks the club when you step up.
 - 2026-10-02 (0.3.0): Rubber-banding fixed. Free roam (walk or drive to your ball and the next tee; R goes there, J calls the buggy). Golf buggy via the Automobility 26.3 port (Quartz Rickshaw frame). PGA 2K-style swing stick replaces the 3-click meter.
 - 2026-10-02: Real NoCubes (26.3 port) integrated, with Sodium/Iris support. The swing camera now stays behind the golfer through the finish (Ben's request), and there are fewer, softer birds and a quieter wind.
